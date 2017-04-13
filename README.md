@@ -1,6 +1,7 @@
 <img src="http://assets.angular.schule/logo-angular-power-workshop.png">
 
-#### von Johannes Hoppe
+#### von Johannes Hoppe und  
+<img src="http://assets.angular.schule/developer_media_logo.jpg" width="200">
 
 <hr>
 
