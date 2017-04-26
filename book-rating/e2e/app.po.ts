@@ -6,6 +6,6 @@ export class BookRatingPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('cs-root h1')).getText();
   }
 }

@@ -1,3 +1,4 @@
+import { browser } from 'protractor';
 import { BookRatingPage } from './app.po';
 
 describe('book-rating App', () => {
@@ -7,8 +8,12 @@ describe('book-rating App', () => {
     page = new BookRatingPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Book Rating', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    page.getParagraphText().then((test) => {
+      console.log(test);
+    });
+
+    expect(page.getParagraphText()).toEqual('Book Rating');
   });
 });
