@@ -1,5 +1,6 @@
 import { BookComponent } from './../book/book.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -9,9 +10,8 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent,
-      // ACHTUNG: INTEGRATIONSTEST
-      BookComponent ]
+      declarations: [ DashboardComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -23,7 +23,6 @@ describe('DashboardComponent', () => {
   });
 
   it('should create', () => {
-
     expect(component).toBeTruthy();
   });
 });
