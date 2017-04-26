@@ -2,6 +2,8 @@ import { BookComponent } from './../book/book.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
+import { By } from '@angular/platform-browser';
+
 import { DashboardComponent } from './dashboard.component';
 
 describe('DashboardComponent', () => {
@@ -24,5 +26,15 @@ describe('DashboardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should add a great book on button click', () => {
+
+    // fixture.nativeElement.querySelector('button').click();
+
+    const button = fixture.debugElement.query(By.css('button')).nativeElement;
+    button.click();
+
+    expect(component.books.length).toBe(3);
   });
 });
