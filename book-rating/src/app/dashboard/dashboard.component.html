@@ -1,4 +1,5 @@
 <cs-book
   [book]="b"
-  *ngFor="let b of books;"
+  *ngFor="let b of books"
+  (rated)="reorderBooks($event)"
 ></cs-book>

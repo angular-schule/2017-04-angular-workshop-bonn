@@ -5,4 +5,9 @@
 
   <h2>{{ book.title }} <small>{{ book.rating }}</small></h2>
   <p>{{ book.description }}</p>
+
+
+  <button (click)="rateUp()" class="btn btn-default glyphicon glyphicon-thumbs-up"></button>
+  <button (click)="rateDown()" class="btn btn-danger glyphicon glyphicon-thumbs-down"></button>
+
 </div>
