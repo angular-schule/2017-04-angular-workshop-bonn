@@ -1,13 +1,17 @@
-<form>
+<form #bookForm="ngForm">
   <div class="form">
 
     <div class="form-group">
       <label>ISBN</label>
       <input
         [(ngModel)]="book.isbn"
-        class="form-control" name="isbn" #isbn
+        class="form-control" name="isbn" #isbn="ngModel"
         required
         minlength="3">
+    </div>
+
+    <div [hidden]="isbn.valid || isbn.pristine" class="alert alert-danger">
+      Sie sollten eine ISBN angeben!
     </div>
 
     <div class="form-group">
@@ -26,7 +30,9 @@
     </div>
 
     <div class="form-group">
-      <button (click)="add()" class="btn btn-danger">Submit</button>
+      <button
+        [disabled]="!bookForm.valid"
+        (click)="add()" class="btn btn-danger">Submit</button>
     </div>
 
   </div>

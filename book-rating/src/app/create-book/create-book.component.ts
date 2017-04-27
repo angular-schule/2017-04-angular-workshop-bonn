@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Book } from './../shared/book';
 
@@ -13,8 +14,12 @@ export class CreateBookComponent {
   @Output()
   bookCreated = new EventEmitter<Book>();
 
+  @ViewChild(NgForm)
+  bookForm: NgForm;
+
   add() {
     this.bookCreated.emit(this.book);
     this.book = Book.empty();
+    this.bookForm.reset(this.book);
   }
 }
