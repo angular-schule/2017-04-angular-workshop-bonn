@@ -8,4 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic([{
+  provide: 'BACKEND_URL',
+  useValue: environment.myBackendUrl
+}]).bootstrapModule(AppModule);

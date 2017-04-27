@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Book } from '../shared/book';
 import { Http } from '@angular/http';
 
@@ -10,7 +10,11 @@ import { Http } from '@angular/http';
 export class DashboardComponent implements OnInit {
   books: Book[] = [];
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+    @Inject('BACKEND_URL') private myBackendUrl: string) {
+
+      console.log(myBackendUrl);
+     }
 
   ngOnInit() {
 
