@@ -5,7 +5,7 @@ import { Book } from './../shared/book';
 @Component({
   selector: 'cs-create-book',
   templateUrl: './create-book.component.html',
-  styleUrls: ['./create-book.component.css']
+  styleUrls: ['./create-book.component.less']
 })
 export class CreateBookComponent {
   book = Book.empty();
