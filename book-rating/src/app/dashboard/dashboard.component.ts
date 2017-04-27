@@ -32,4 +32,8 @@ export class DashboardComponent implements OnInit {
   test() {
     this.books.push(new Book('111', 'Tolles Buch', ''));
   }
+
+  addBookToList(book: Book) {
+    this.books.push(book);
+  }
 }

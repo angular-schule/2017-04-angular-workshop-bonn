@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { Book } from './../shared/book';
 
 @Component({
   selector: 'cs-create-book',
   templateUrl: './create-book.component.html',
   styleUrls: ['./create-book.component.css']
 })
-export class CreateBookComponent implements OnInit {
+export class CreateBookComponent {
+  book = Book.empty();
 
-  constructor() { }
+  @Output()
+  bookCreated = new EventEmitter<Book>();
 
-  ngOnInit() {
+  add() {
+    this.bookCreated.emit(this.book);
+    this.book = Book.empty();
   }
-
 }
