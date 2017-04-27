@@ -1,3 +1,5 @@
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 import { BookComponent } from './../book/book.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -11,11 +13,22 @@ describe('DashboardComponent', () => {
   let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async(() => {
+
+    const httpMock = {
+      get: () => Observable.of({
+        json: () => []
+      })
+    };
+
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ],
-      schemas: [NO_ERRORS_SCHEMA]
+      declarations: [DashboardComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [{
+        provide: Http,
+        useValue: httpMock
+      }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
